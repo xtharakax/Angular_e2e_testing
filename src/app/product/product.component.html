@@ -1,0 +1,19 @@
+<div class="container">
+    <h5>{{product_title}}</h5>
+    <div class="form-group">
+        <label for="product_name">Product</label>
+        <input type="text" class="form-control" id="product_name" [(ngModel)]="product_name" placeholder="Product Name">
+    </div>
+    <div class="form-group">
+        <label for="product_amount">Quantity</label>
+        <input type="text" class="form-control" id="product_amount" [(ngModel)]="product_amount" placeholder="Amount">
+    </div>
+    <button class="btn btn-primary" (click)="onAddProduct()">Submit</button>
+    <div class="form-group" *ngIf="product_array && product_array.length>0">
+        <hr>
+        <h5>Cambio Product List</h5>
+        <ul class="list-group" *ngFor="let product of product_array">
+            <li class="list-group-item">{{product}}</li>
+        </ul>
+    </div>
+</div>
